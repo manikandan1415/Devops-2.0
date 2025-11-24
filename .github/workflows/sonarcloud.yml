@@ -37,6 +37,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=YOUR_PROJECT_KEY
-          -Dsonar.organization=YOUR_ORG
+          -Dsonar.projectKey=manikandan1415_Devops-2.0
+          -Dsonar.organization=manikandan1514
           -Dsonar.python.coverage.reportPaths=coverage.xml
