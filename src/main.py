@@ -7,14 +7,13 @@ MENU_TEXT = """
 4. Divide
 5. Exit
 """
-
 PROMPT_CHOICE = "Choose an option (1-5): "
 PROMPT_NUM1 = "Enter first number: "
 PROMPT_NUM2 = "Enter second number: "
 ERROR_DIV_ZERO = "Error: Division by zero!"
 ERROR_INVALID_CHOICE = "Invalid choice!"
 GOODBYE_MSG = "Goodbye!"
-RESULT_MSG = "Result: {}"
+RESULT_PREFIX = "Result: "  # Constant for result
 
 # Calculator loop
 while True:
@@ -35,15 +34,19 @@ while True:
 
     # Perform calculation
     if choice == "1":
-        print(RESULT_MSG.format(num1 + num2))
+        result = num1 + num2
     elif choice == "2":
-        print(RESULT_MSG.format(num1 - num2))
+        result = num1 - num2
     elif choice == "3":
-        print(RESULT_MSG.format(num1 * num2))
+        result = num1 * num2
     elif choice == "4":
         if num2 == 0:
             print(ERROR_DIV_ZERO)
-        else:
-            print(RESULT_MSG.format(num1 / num2))
+            continue
+        result = num1 / num2
     else:
         print(ERROR_INVALID_CHOICE)
+        continue
+
+    # Print result once, using the constant
+    print(f"{RESULT_PREFIX}{result}")
