@@ -1,4 +1,3 @@
-# Constants for messages
 MENU_TEXT = """
 --- Calculator Menu ---
 1. Add
@@ -13,9 +12,8 @@ PROMPT_NUM2 = "Enter second number: "
 ERROR_DIV_ZERO = "Error: Division by zero!"
 ERROR_INVALID_CHOICE = "Invalid choice!"
 GOODBYE_MSG = "Goodbye!"
-RESULT_PREFIX = "Result: "  # Constant for result
+RESULT_PREFIX = "Result: "  
 
-# Calculator loop
 while True:
     print(MENU_TEXT)
     choice = input(PROMPT_CHOICE)
@@ -32,7 +30,7 @@ while True:
         print("Error: Please enter a valid number!")
         continue
 
-    # Perform calculation
+    
     if choice == "1":
         result = num1 + num2
     elif choice == "2":
@@ -48,5 +46,5 @@ while True:
         print(ERROR_INVALID_CHOICE)
         continue
 
-    # Print result once, using the constant
+    
     print(f"{RESULT_PREFIX}{result}")
